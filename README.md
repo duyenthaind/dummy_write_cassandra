@@ -4,7 +4,9 @@ A dummy tool to test cassandra writer phase
 Prequsite
 - Remember to change the listen address of your keyspace in the cassandra configuration file along with your cassandra server credentials
 - Keyspace: thaind_chat
-- You can create the keyspace with the command below
+- You can create the keyspace with the command below:
+
+
 CREATE KEYSPACE thaind_chat WITH replication = {'class': 'NetworkTopologyStrategy', 'VN': '2'}  AND durable_writes = true;
 
 CREATE TABLE thaind_chat.dh_message (
