@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'com.thaind.sample'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    implementation group: 'com.datastax.oss', name: 'java-driver-core', version: '4.13.0'
+    implementation group: 'com.datastax.oss', name: 'java-driver-query-builder', version: '4.13.0'
+    implementation group: 'com.datastax.oss', name: 'java-driver-mapper-runtime', version: '4.13.0'
+    annotationProcessor(group: 'com.datastax.oss', name: 'java-driver-mapper-processor', version: '4.13.0')
+}
+
+jar{
+    manifest{
+        attributes(
+                'Main-Class':'com.thaind.sample.cassandra.bootstrap.Start'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
