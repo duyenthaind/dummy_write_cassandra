@@ -8,7 +8,7 @@ import com.thaind.sample.cassandra.repository.Repository;
 public abstract class DatabaseWriterAbstraction<T> {
     protected Repository<T> repository;
 
-    public DatabaseWriterAbstraction(Repository<T> repository) {
+    protected DatabaseWriterAbstraction(Repository<T> repository) {
         this.repository = repository;
     }
 }
