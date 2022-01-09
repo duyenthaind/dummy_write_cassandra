@@ -13,7 +13,7 @@ public class CassandraRepositoryFactory {
     private CassandraRepositoryFactory() {
     }
 
-    public static Repository getRepository(Constants.CassandraRepositoryType cassandraRepositoryType) {
+    public static Repository<?> getRepository(Constants.CassandraRepositoryType cassandraRepositoryType) {
         CqlSession cqlSession = CassandraConfiguration.getCqlSessionBuilder().build();
         CassandraRepositoryBootstrapMapper cassandraMapper = CassandraRepositoryBootstrapMapper.builder(cqlSession).build();
         switch (cassandraRepositoryType) {
